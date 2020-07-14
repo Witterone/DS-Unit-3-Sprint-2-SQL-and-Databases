@@ -11,9 +11,9 @@ import pandas as pd
 df = pd.read_csv("C:/Users/Ronin/Documents/DS-Unit-3-Sprint-2-SQL-and-Databases/module1-introduction-to-sql/buddymove_holidayiq.csv")
 # I needed to include all of the pathing in one line
 
-df.to_sql("review",con=sqlite3.Connection)
+conn = sqlite3.connect("C:/Users/Ronin/Documents/DS-Unit-3-Sprint-2-SQL-and-Databases/module1-introduction-to-sql/buddymove_holidayiq.csv")
 
-conn = sqlite3.connect("review")
+df.to_sql("review",conn)
 
 curs = conn.cursor()
 

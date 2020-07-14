@@ -56,15 +56,15 @@ def items_sort():
     print("The number of non-weapon items is ")
     print(curs.execute(count_sundry).fetchall())
 
-character_inventory = 'SELECT COUNT(item_id) 
+character_inventory = '''SELECT COUNT(item_id) 
 FROM charactercreator_character_inventory 
-GROUP BY character_id LIMIT 20;'
+GROUP BY character_id LIMIT 20;'''
 
-character_weapons = 'SELECT COUNT(item_id) 
+character_weapons = '''SELECT COUNT(item_id) 
 FROM charactercreator_character_inventory 
 INNER JOIN armory_weapon 
 ON charactercreator_character_inventory.item_id = armory_weapon.item_ptr_id
-GROUP BY character_id LIMIT 20;'
+GROUP BY character_id LIMIT 20;'''
 
 def player_inventory_count():
     print("The first twenty players item counts are ")
@@ -72,13 +72,13 @@ def player_inventory_count():
     print("The first twenty players weapon counts are ")
     print(curs.execute(character_weapons).fetchall())
 
-average_inventory = 'SELECT AVG(COUNT(item_id)) 
-FROM charactercreator_character_inventory;'
+average_inventory = '''SELECT AVG(COUNT(item_id)) 
+FROM charactercreator_character_inventory;'''
 
-average_weapon = 'SELECT AVG(COUNT(item_id)) 
+average_weapon = '''SELECT AVG(COUNT(item_id)) 
 FROM charactercreator_character_inventory
 INNER JOIN armory_weapon
-ON charactercreator_character_inventory.item_id = armory_weapon.item_ptr_id;'
+ON charactercreator_character_inventory.item_id = armory_weapon.item_ptr_id;'''
 
 def average_inventories():
     print("The average number of items a player has is ")
