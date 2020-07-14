@@ -15,7 +15,8 @@ password = 'SfFTOS3EQqsV1c4RKQZEtU7O2g8Kic-9'
 
 host = 'ruby.db.elephantsql.com'
 
-pg_conn = psycopg2.connect(dbname=dbname, user=user, password=password, host=host)
+pg_conn = psycopg2.connect(dbname=dbname, user=user, password=password,
+                           host=host)
 
 pg_curs = pg_conn.cursor()
 

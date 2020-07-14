@@ -52,7 +52,7 @@ count_sundry = 'SELECT COUNT(*) FROM armory_items;'
 
 def items_sort():
     print("The number of weapons is ")
-    print(curse.execute(count_weapons).fetchall())
+    print(curs.execute(count_weapons).fetchall())
     print("The number of non-weapon items is ")
     print(curs.execute(count_sundry).fetchall())
 
