@@ -80,7 +80,8 @@ print("The first twenty players item counts are "+
 print("The first twenty players weapon counts are "+
       curs.execute(character_weapons).fetchall())
 #%%
-average_inventory = '''SELECT AVG(COUNT(item_id)) 
+average_inventory = '''SELECT 
+AVG(SELECT COUNT(item_id)FROM charactercreator_character) 
 FROM charactercreator_character_inventory;'''
 
 average_weapon = '''SELECT AVG(COUNT(item_id)) 
