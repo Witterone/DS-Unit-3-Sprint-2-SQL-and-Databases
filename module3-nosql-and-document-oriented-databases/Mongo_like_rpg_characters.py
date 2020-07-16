@@ -4,6 +4,8 @@ Created on Wed Jul 15 12:37:34 2020
 
 @author: Ronin
 """
+#to keep the password but not push you can import variables from another
+#file with the password saved.
 
 import pymongo
 

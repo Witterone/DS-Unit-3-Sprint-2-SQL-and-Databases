@@ -19,12 +19,12 @@ curs = conn.cursor()
 
 row_count = 'SELECT COUNT(*) FROM review;'
 
-print("Total number of entries is ")
-print(curs.execute(row_count).fetchall())
+print("Total number of entries is "+
+       curs.execute(row_count).fetchall())
 
 nature_shoppers = '''SELECT COUNT(*) FROM review WHERE Nature >= 100
  AND Shopping >= 100;'''
 
-print("The number of users who love nature and shopping is ")
-print(curs.execute(nature_shoppers).fetchall())
+print("The number of users who love nature and shopping is "+
+    curs.execute(nature_shoppers).fetchall())
 

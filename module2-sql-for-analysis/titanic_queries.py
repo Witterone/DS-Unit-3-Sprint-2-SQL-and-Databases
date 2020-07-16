@@ -42,13 +42,13 @@ pg_conn = psycopg2.connect(dbname=dbname, user=user, password=password,
 
 pg_curs = pg_conn.cursor()
 
-create_titanic_table = """
+create_titanic_table = """DROP TABLE titanic_table;
 CREATE TYPE sex AS ENUM ('male','female');
 CREATE TABLE titanic(
     index SERIAL PRIMARY KEY,
     Survived INT,
     Pclass INT,
-    Name VARCHAR(50),
+    Name VARCHAR(100),
     Sex sex,
     Age FLOAT,
     SiblingORSpouse_Aboard INT,
@@ -56,7 +56,7 @@ CREATE TABLE titanic(
     Fare FLOAT
     );
 """
-#breakpoint()
+
 pg_curs.execute(create_titanic_table)
 pg_conn.commit()
 #%%
